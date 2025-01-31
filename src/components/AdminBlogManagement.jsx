@@ -15,7 +15,7 @@ const AdminBlogManagement = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/blogs');
+        const response = await axios.get('https://digital-solutions-backend.onrender.com/api/blogs');
         setBlogs(response.data);
       } catch (error) {
         console.error('Error fetching blogs:', error);
@@ -38,9 +38,9 @@ const AdminBlogManagement = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      await axios.post('http://localhost:5000/api/blogs', formData, config);
+      await axios.post('https://digital-solutions-backend.onrender.com/api/blogs', formData, config);
       setFormData({ title: '', excerpt: '', image: '', slug: '' });
-      const response = await axios.get('http://localhost:5000/api/blogs');
+      const response = await axios.get('https://digital-solutions-backend.onrender.com/api/blogs');
       setBlogs(response.data);
     } catch (error) {
       console.error('Error creating blog:', error);
@@ -54,8 +54,8 @@ const AdminBlogManagement = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`, config);
-      const response = await axios.get('http://localhost:5000/api/blogs');
+      await axios.delete(`https://digital-solutions-backend.onrender.com/api/blogs/${id}`, config);
+      const response = await axios.get('https://digital-solutions-backend.onrender.com/api/blogs');
       setBlogs(response.data);
     } catch (error) {
       console.error('Error deleting blog:', error);
