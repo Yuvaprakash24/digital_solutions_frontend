@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
     return <div>Loading...</div>; // Or a proper loading spinner
   }
   
-  return user ? children : <Navigate to="/login" />;
+  return user ? children : <Navigate to="/register" />;
 };
 
 export default PrivateRoute;
