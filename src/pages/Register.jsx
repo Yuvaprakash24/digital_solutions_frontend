@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { UserPlus } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [name, setName] = useState(''); const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [error, setError] = useState('');
@@ -41,8 +42,9 @@ const Register = () => {
           </div>
 
           <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create Account</button>
-
-          <label className="block text-sm font-medium text-gray-700">If already a user! <a href='https://digital-solutions-frontend.vercel.app/login'>LogIn</a></label>
+          <Link to={`/login`} className="text-blue-500 hover:underline">
+                  LogIn
+                </Link>
         </form>
       </div>
     </div>
