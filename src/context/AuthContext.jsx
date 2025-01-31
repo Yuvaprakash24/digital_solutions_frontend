@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/users/register`, {
+      const response = await fetch(`https://github.com/Yuvaprakash24/digital_solutions_frontend/api/users/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
