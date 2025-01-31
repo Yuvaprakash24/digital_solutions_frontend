@@ -11,7 +11,7 @@ const AdminMetricsDashboard = () => {
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/metrics');
+        const response = await axios.get('https://digital-solutions-backend.onrender.com/api/metrics');
         setMetrics(response.data[0]);
       } catch (error) {
         console.error('Error fetching metrics:', error);
